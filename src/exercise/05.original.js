@@ -38,8 +38,8 @@ function AppProvider({children}) {
     dogName: '',
     grid: initialGrid,
   })
-
-  const value = React.useMemo(() => [state, dispatch], [state])
+  // 🐨 memoize this value with React.useMemo
+  const value = [state, dispatch]
   return (
     <AppStateContext.Provider value={value}>
       {children}
